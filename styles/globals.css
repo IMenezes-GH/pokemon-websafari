@@ -1,0 +1,104 @@
+:root{
+    --bg-color-primary: rgb(250, 245, 245);
+    --txt-color-primary: rgb(15, 15, 15);
+    --color-accent: rgb(230, 61, 61);
+    --box-shadow: rgba(0,0,0,0.2)
+
+}
+
+* {
+    font-family: 'Montserrat';
+}
+
+body {
+    background-color: var(--bg-color-primary);
+    color: var(--txt-color-primary)
+}
+
+a {
+    text-decoration: none;
+    
+    &:visited{
+        color: var(--txt-color-primary)
+    }
+}
+
+hr {
+    border-width: 1px;
+    border-style: solid;
+}
+
+button {
+    cursor: pointer;
+
+    background-color: var(--color-accent);
+    color: white;
+    
+    border: 1px solid var(--color-accent);
+    border-radius: 0.225rem;
+
+    box-shadow: 2px 2px 2px var(--box-shadow);
+
+    padding: 0.5rem 1rem;
+    
+    font-weight: 500;
+    
+    &:hover{
+        background-color: white;
+        color: var(--color-accent);
+        border-color: var(--color-accent);
+    }
+}
+
+table{
+    border-collapse: collapse;
+    border: 2px solid rgb(170, 162, 162);
+
+    & thead {
+        background-color: var(--color-accent);
+        color: white;
+        
+        border: 2px solid rgba(133, 38, 38, 0.527);
+        padding: .25rem;
+    }
+    
+    & td{
+        text-align: center;
+
+        border-left: none;
+        border-right: none;
+
+        padding: .25rem;
+    }
+
+    & tr:nth-of-type(2n){
+        background-color: rgba(128, 128, 128, 0.226);
+    }
+
+    & tfoot{
+        background-color: var(--color-accent);
+        border: 2px solid rgba(133, 38, 38, 0.527);
+        color: white;
+        font-weight: 600;
+    }
+}
+
+.txt-weight-200{
+    font-weight: 200;
+}
+
+.txt-weight-500{
+    font-weight: 500;
+}
+
+.txt-weight-800{
+    font-weight: 800;
+}
+
+.txt-color-accent{
+    color: var(--color-accent);
+}
+
+.border-color-accent{
+    border-color: var(--color-accent);
+}

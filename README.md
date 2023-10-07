@@ -1,6 +1,9 @@
 # Pokémon Websafari
 
-**Languages:**
+### Languages:
+
+- [English](https://github.com/IMenezes-GH/pokemon-websafari/blob/main/README.md)
+- [Portuguese](https://github.com/IMenezes-GH/pokemon-websafari/blob/main/docs/README.pt-br.md)
 
 A web game based on PokéAPI where you explore and catch pokémon by using browser resources
 

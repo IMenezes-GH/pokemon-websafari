@@ -2,8 +2,8 @@
 
 ### Idioma:
 
-- [English]()
-- [Portuguese]()
+- [English](https://github.com/IMenezes-GH/pokemon-websafari/blob/main/README.md)
+- [Portuguese](https://github.com/IMenezes-GH/pokemon-websafari/blob/main/docs/README.pt-br.md)
 
 Um jogo baseado no [PokéAPI](https://pokeapi.co/) onde você explora e captura Pokémon utilizando recursos do browser
 

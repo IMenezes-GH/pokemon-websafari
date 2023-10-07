@@ -2,8 +2,12 @@
 :root{
     --bg-color-primary: rgb(250, 245, 245);
     --txt-color-primary: rgb(15, 15, 15);
+
+    --color-black: rgb(20, 20, 20);
     --color-accent: rgb(230, 61, 61);
+
     --box-shadow: rgba(0,0,0,0.2);
+
 
     --font-family-pixel: 'Pixelify Sans', cursive;
 
@@ -20,8 +24,11 @@ body {
     background-color: var(--bg-color-primary);
     color: var(--txt-color-primary);
 
-    min-height: 140dvh;
     max-width: 100vw;
+}
+
+main {
+    min-height: 100vh;
 }
 
 a {

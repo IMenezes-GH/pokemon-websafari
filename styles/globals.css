@@ -1,15 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400;500;600;700&display=swap');
 :root{
     --bg-color-primary: rgb(250, 245, 245);
     --txt-color-primary: rgb(15, 15, 15);
     --color-accent: rgb(230, 61, 61);
-    --box-shadow: rgba(0,0,0,0.2)
+    --box-shadow: rgba(0,0,0,0.2);
+
+    --font-family-pixel: 'Pixelify Sans', cursive;
 
 }
 
 * {
     margin: 0;
     padding: 0;
-    
+
     font-family: 'Montserrat';
 }
 

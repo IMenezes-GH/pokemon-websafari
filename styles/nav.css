@@ -53,7 +53,12 @@ nav {
     align-items: center;
 
     & a, a:visited {
-        color: white !important;
+        color: white;
+        font-size: 1.9rem;
+    }
+
+    & a:hover{
+        color: black;
     }
 
     z-index: 10;

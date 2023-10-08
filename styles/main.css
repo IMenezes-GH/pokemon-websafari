@@ -1,6 +1,5 @@
 #section-hero {
     /* background-color: rgb(233, 228, 228); */
-
     & hr {
         border: 1px solid white;
         border-left: none;
@@ -83,7 +82,7 @@ main {
         &>div:first-of-type{
             padding: 4rem 0;
         }
-    }
+    }   
 }
 
 

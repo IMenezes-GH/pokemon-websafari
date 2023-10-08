@@ -12,11 +12,14 @@ nextButton.onclick = () => {
     render(searchIndex);
 }
 previousButton.onclick = () => {
+    if (searchIndex === 1) return;
+    
     searchIndex -= 24;
     render(searchIndex);
 }
 
 async function render(index){
+    previousButton.disabled = searchIndex === 1 || searchIndex === 42; //Disable button if it's the first page
     try {
         pokedex.replaceChildren();
         for (let i = index; i < index + 24; i++){

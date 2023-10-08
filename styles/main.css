@@ -64,6 +64,28 @@
     }
 }
 
+main {
+    display: flex;
+    flex-direction: column;
+
+    &> hr {
+        border: 1px solid black;
+    }
+
+    & #pokedex-section{
+        display: flex;
+        flex-direction: column;
+        
+        & h1, p {
+            text-align: center;
+            font-size: 2rem;
+        }
+        &>div:first-of-type{
+            padding: 4rem 0;
+        }
+    }
+}
+
 
 @media screen and (min-width: 612px), (orientation: landscape) {
 

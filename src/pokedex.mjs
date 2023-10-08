@@ -1,23 +1,35 @@
 import Pokemon from "./pokemon.mjs";
+import { fetchPokemonData } from "./util.mjs";
 
-const POKEAPI_URL = 'https://pokeapi.co/api/v2/pokemon/';
+const pokedex = document.getElementById('pokedex-container');
+const nextButton = document.getElementById('next');
+const previousButton = document.getElementById('previous')
 
-const fetchPokemonData = async (pokemon) =>{
-    const response = await fetch(`${POKEAPI_URL}${pokemon}`);
-    if (!response.ok) throw new Error("Pokémon not found");
+let searchIndex = 1;
 
-    return response.json();
+nextButton.onclick = () => {
+    searchIndex += 24;
+    render(searchIndex);
+}
+previousButton.onclick = () => {
+    searchIndex -= 24;
+    render(searchIndex);
 }
 
-const main = async() => {
+async function render(index){
     try {
-        const data = await fetchPokemonData('porygon');
-        const pokemon = new Pokemon(data);
-        console.log(pokemon);
+        pokedex.replaceChildren();
+        for (let i = index; i < index + 24; i++){
+            const data = await fetchPokemonData(i);
+            const pokemon = new Pokemon(data);
+            pokedex.appendChild(pokemon.createElement())
+        }
+
     }
     catch (err){
         console.error(err.message);
     }
+
 }
 
-main();
+render(searchIndex);

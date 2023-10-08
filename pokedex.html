@@ -10,7 +10,8 @@
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/footer.css">
   <link rel="stylesheet" href="./styles/animation.css">
-  <script type="module" src="./src/main.mjs"></script>
+  <link rel="stylesheet" href="./styles/pokedex.css">
+  <script type="module" src="./src/pokedex.mjs"></script>
 </head>
 
 <body>
@@ -28,7 +29,22 @@
     <a href="./explore.html">Explore</a>
   </nav>
 
-  <main></main>
+  <main>
+    <section id="pokedex-section">
+      <div>
+        <h1>Your Pokédex</h1>
+        <p>Undiscovered pokémon shows as a silhoutte!</p>
+      </div>
+      <div class="button-container">
+        <span class="double-button">
+          <button id="previous">🢐 Previous</button>
+          <button id="next">Next 🢒</button>
+        </span>
+      </div>
+      <hr>
+      <div id="pokedex-container"></div>
+    </section>
+  </main>
   <footer>
     <div class="footer-social">
       <a href="https://github.com/IMenezes-GH/pokemon-websafari"><img src="./assets/github.svg" alt=""></a>

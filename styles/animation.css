@@ -1,0 +1,92 @@
+:root{
+    --delay: 0s;
+    --start-opacity: 0;
+}
+
+.animate {
+    animation-duration: 1s;
+    animation-fill-mode: both;
+
+}
+
+.animate.animate--infinite {
+    animation-duration: infinite;
+}
+
+.animate.animate--delay {
+    animation-delay: var(--delay);
+}
+
+@keyframes slideRight {
+    0% {
+        transform: translateX(-1000px);
+    }
+
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes popIn {
+    0% {
+        opacity: var(--start-opacity);
+    }
+
+    100% {
+        opacity: 100%;
+    }
+}
+
+@keyframes heroCarousel {
+    0% {
+        background-image: url('../assets/Safari_RTDX.png');
+    }
+    10% {
+        background-image: url('../assets/Frigid_Cavern_RTDX.png');
+    }
+    20% {
+        background-image: url('../assets/Mystic_Lake_RTDX.png');
+    }
+    30% {
+        background-image: url('../assets/Southern_Island_RTDX.png');
+    }
+    40% {
+        background-image: url('../assets/Thunder_Crag_RTDX.png');
+    }
+    50% {
+        background-image: url('../assets/Treasure_Sea_RTDX.png');
+    }
+    60% {
+        background-image: url('../assets/Waterfall_Lake_RTDX.png');
+    }
+    70% {
+        background-image: url('../assets/Wild_Plains_RTDX.png');
+    }
+    80% {
+        background-image: url('../assets/Withering_Desert_RTDX.png');
+    }
+    90% {
+        background-image: url('../assets/Jungle_RTDX.png');
+    }
+}
+
+.hero-carousel{
+    animation: heroCarousel 120s ease-in 1s infinite;
+}
+
+.slide-right {
+    animation-name: slideRight;
+    transform: translateX(-1000px);
+}
+
+.pop-in {
+    animation-name: popIn;
+    opacity: var(--start-opacity);
+}
+
+.slide-right.pop-in{
+    animation:
+        slideRight 1s ease var(--delay) both,
+        popIn 1s linear calc(var(--delay) + 0.5s) forwards;
+}
+

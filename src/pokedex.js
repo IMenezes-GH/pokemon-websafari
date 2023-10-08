@@ -1,5 +1,5 @@
-import Pokemon from "./pokemon.mjs";
-import { fetchPokemonData } from "./util.mjs";
+import Pokemon from "./pokemon.js";
+import { fetchPokemonData } from "./util.js";
 
 const pokedex = document.getElementById('pokedex-container');
 const nextButton = document.getElementById('next');

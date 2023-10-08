@@ -7,17 +7,19 @@
   <title>Pokémon Websafari | The Pokédex for the web</title>
   <link rel="stylesheet" href="./styles/globals.css">
   <link rel="stylesheet" href="./styles/nav.css">
+  <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/footer.css">
+  <link rel="stylesheet" href="./styles/animation.css">
   <script type="module" src="./src/main.mjs"></script>
 </head>
 
 <body>
-  <header>
+  <header id="header">
     <h1><a href="./index.html">PokéSafari</a> <button class="mobile-button">☰</button></h1>
     <hr>
   </header>
   <nav>
-    <a href="./about.html">About</a>
+    <a href="./index.html">About</a>
     <span class="txt-weight-800">|</span>
     <a href="./pokedex.html">Pokédex</a>
     <span class="txt-weight-800">|</span>
@@ -26,8 +28,26 @@
     <a href="./explore.html">Explore</a>
   </nav>
 
-  <main></main>
+  <main>
+    <section id="section-hero">
+      <div role="img" class="animate hero-carousel" style="--start-opacity: 0.6">
+        <div class="hero-filter fade-in-out"></div>
+        <article>
+          <hgroup>
+            <h1 class="animate slide-right pop-in txt-shadow-accent">Your browser's Pokémon safari!</h1>
+            <p class="animate slide-right pop-in" style="--delay: .5s">Explore the PokéSafari and complete your online pokedéx!</p>
+          </hgroup>
+          <hr>
+          <button class="animate pop-in animate--delay txt-weight-800" style="--delay: 2s;--start-opacity: 0">Play now!</button>
+          <p></p>
+        </article>
+      </div>
+    </section>
+  </main>
   <footer>
+    <section>
+      <a href="#header">Back to top</a>
+    </section>
     <div class="footer-social">
       <a href="https://github.com/IMenezes-GH/pokemon-websafari"><img src="./assets/github.svg" alt=""></a>
     </div>

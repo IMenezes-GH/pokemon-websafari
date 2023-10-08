@@ -4,20 +4,23 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pokémon Websafari</title>
+  <title>Pokémon Websafari | The Pokédex for the web</title>
   <link rel="stylesheet" href="./styles/globals.css">
   <link rel="stylesheet" href="./styles/nav.css">
+  <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/footer.css">
-  <script type="module" src="./src/main.mjs"></script>
+  <link rel="stylesheet" href="./styles/animation.css">
+  <link rel="stylesheet" href="./styles/pokedex.css">
+  <script type="module" src="./src/pokedex.mjs"></script>
 </head>
 
 <body>
-  <header>
+  <header id="header">
     <h1><a href="./index.html">PokéSafari</a> <button class="mobile-button">☰</button></h1>
     <hr>
   </header>
   <nav>
-    <a href="./about.html">About</a>
+    <a href="./index.html">About</a>
     <span class="txt-weight-800">|</span>
     <a href="./pokedex.html">Pokédex</a>
     <span class="txt-weight-800">|</span>
@@ -26,8 +29,26 @@
     <a href="./explore.html">Explore</a>
   </nav>
 
-  <main></main>
+  <main>
+    <section id="pokedex-section">
+      <div>
+        <h1>Your Pokédex</h1>
+        <p>Undiscovered pokémon shows as a silhoutte!</p>
+      </div>
+      <div class="button-container">
+        <span class="double-button">
+          <button id="previous">🢐 Previous</button>
+          <button id="next">Next 🢒</button>
+        </span>
+      </div>
+      <hr>
+      <div id="pokedex-container"></div>
+    </section>
+  </main>
   <footer>
+    <section>
+      <a href="#header">Back to top</a>
+    </section>
     <div class="footer-social">
       <a href="https://github.com/IMenezes-GH/pokemon-websafari"><img src="./assets/github.svg" alt=""></a>
     </div>

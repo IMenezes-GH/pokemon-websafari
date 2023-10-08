@@ -30,10 +30,14 @@ header {
     & a, a:visited {
         color: white !important;
     }
+
+    z-index: 10;
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);
 }
 
 nav {
 
+    box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);
     width: 100%;
     min-height: 2.5vh;
     padding: 0.75rem 0;
@@ -49,14 +53,28 @@ nav {
     align-items: center;
 
     & a, a:visited {
-        color: white !important;
+        color: white;
+        font-size: 1.9rem;
     }
+
+    & a:hover{
+        color: black;
+    }
+
+    z-index: 10;
 }
 
-@media screen and (min-width: 612px) {
+@media screen and (min-width: 612px){
 
     header {
         position: static;
+
+        & h1 {
+            & a {
+                flex-grow: 1;
+                text-align: center;
+            }
+        }
     }
 
     nav {

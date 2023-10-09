@@ -33,13 +33,18 @@ export const getProfile = () => {
 export const selectProfileEvent = () => {
     const profilesStorage = Storage.loadLocalStorage('profiles');
     const changeProfile = (currentDialog) => {
+        
         const getProfile = currentDialog.querySelector('select').value;
         profilesStorage.profile = getProfile;
+
         Storage.updateLocalStorage('profiles', profilesStorage);
+        const playerText = document.getElementById('player');
+        playerText.innerText = getProfile;
+
         currentDialog.close();
         document.body.removeChild(currentDialog);
     }
-    
+
     const dialog = new Dialog({
         title: 'Select a trainer profile',
         message: 'choose which trainer profile to use',

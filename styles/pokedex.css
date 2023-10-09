@@ -6,8 +6,10 @@
 
     background-color: rgb(197, 194, 194);
     
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
     gap: .5rem;
 }
 
@@ -94,27 +96,5 @@
             background-color: black !important;
             color: white !important;
         }
-    }
-}
-
-@media screen and (min-width: 612px){
-    #pokedex-container{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media screen and (min-width: 914px){
-    #pokedex-container{
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-@media screen and (min-width: 1212px){
-    #pokedex-container{
-        grid-template-columns: repeat(3, 1fr);
-    }
-}
-@media screen and (min-width: 1912px){
-    #pokedex-container{
-        grid-template-columns: repeat(6, 1fr);
     }
 }

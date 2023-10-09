@@ -90,6 +90,11 @@ main {
 
     #section-hero div{
         min-height: 60vh !important;
+        
+        & h1, h2, p{
+
+            font-size: 3rem !important;
+        }
     }
 
     #section-hero button{

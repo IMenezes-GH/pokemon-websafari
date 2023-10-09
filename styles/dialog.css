@@ -1,4 +1,5 @@
 dialog{
+
     position: fixed;
 
     margin: auto;
@@ -34,6 +35,10 @@ dialog{
     & h1, h2, h3{
         width: 100%;
         text-align: center;
+    }
+
+    & select {
+        height: fit-content;
     }
 
     &.white{

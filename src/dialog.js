@@ -75,11 +75,21 @@ export default class Dialog {
                 dialog.querySelector('button:nth-of-type(2)').addEventListener('click', () => this.yesCallback(dialog, ...arguments))
                 break;
             case 'createProfile':
-                dialog.querySelector('.button-wrapper').innerHTML =
+                dialog.innerHTML =
                 `
-                <input class="flex-grow-1" type="text" placeholder="Your trainer name"/>
+                <h2>${this.title}</h2>
+                <hr>
+                <p>${this.message}</p>
+                <select>
+                <option value="bulbasaur">Bulbasaur</option>
+                <option value="charmander">Charmander</option>
+                <option value="squirt">Squirtle</option>
+                </select>
+                <div class="button-wrapper">
+                <input required class="flex-grow-1" type="text" placeholder="Your trainer name"/>
                 <button class="cancel-button">Go Back</button>
                 <button>Create Trainer</button>
+                </div>
                 `
                 dialog.querySelector('button:nth-of-type(1)').addEventListener('click', () => this.noCallback(dialog, ...arguments))
                 dialog.querySelector('button:nth-of-type(2)').addEventListener('click', () => this.yesCallback(dialog, ...arguments))

@@ -3,8 +3,8 @@ import {EmptyStorageError, NoStorageError} from './error';
 export default class Storage{
 
 
-    constructor(){
-        this.profile = Storage.loadLocalStorage('profiles')[1];
+    constructor(profileName){
+        return Storage.loadLocalStorage(profileName);
     }
 
     /**

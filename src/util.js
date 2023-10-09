@@ -41,10 +41,17 @@ export const createNewProfileEvent = () => {
         const chooseName = (currentDialog) => {
             const profilesData = Storage.loadLocalStorage('profiles');
             const trainerName = currentDialog.querySelector("input").value;
+            const starterName = currentDialog.querySelector("select").value;
+
             Storage.createLocalStorage(trainerName, Storage.createStorageHelper('profile'));
 
             const profileData = Storage.loadLocalStorage(trainerName);
             profileData.name = trainerName;
+            profileData.pokemon.push(starterName);
+            profileData.team.push(starterName);
+            profileData.seen_pokemon += 1;
+            profileData.caught_pokemon += 1;
+
             profilesData.profiles.push(trainerName);
             profilesData.size += 1;
 
@@ -57,7 +64,7 @@ export const createNewProfileEvent = () => {
 
         const createTrainerDialog = new Dialog({
             title: 'Choose your name',
-            message: 'Choose a name for this profile',
+            message: 'Choose your started and a name for this profile',
             type: 'createProfile',
             noCallback: goBack,
             yesCallback: chooseName
@@ -67,5 +74,20 @@ export const createNewProfileEvent = () => {
 
         document.body.appendChild(createTrainerDialog);
         createTrainerDialog.showModal();
+    }
+}
+
+export const getProfile = () => {
+    try {
+        Storage.loadLocalStorage('profiles');
+        const profilesStorage = Storage.loadLocalStorage('profiles');
+
+        if (profilesStorage.size === 1) {
+            return new Storage(profilesStorage.profiles[0]);
+        }
+
+    } catch (err) {
+        Storage.createLocalStorage('profiles', Storage.createStorageHelper('profiles'));
+        return null;
     }
 }

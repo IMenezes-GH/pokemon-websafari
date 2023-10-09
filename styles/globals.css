@@ -94,7 +94,6 @@ button:not(.mobile-button) {
     font-size: 2rem;
     font-weight: 500;
 }
-
 table{
     border-collapse: collapse;
     border: 2px solid rgb(170, 162, 162);
@@ -177,6 +176,10 @@ table{
                 calc(1px * var(--txt-shadow-outline)) calc(2px * var(--txt-shadow-outline)) calc(6px * var(--txt-shadow-outline)) var(--color-accent),
                 calc(1px * var(--txt-shadow-outline)) calc(-1px * var(--txt-shadow-outline)) 0px var(--color-accent),
                 calc(-1px * var(--txt-shadow-outline)) calc(-1px * var(--txt-shadow-outline)) 0px var(--color-accent);
+}
+
+.flex-grow-1{
+    flex-grow: 1 !important;
 }
 
 

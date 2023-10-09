@@ -1,7 +1,25 @@
 export default class Dialog {
 
-    // Dialog types: confirm, warn
+    // Dialog types: confirm, warn, CreateProfile
 
+    static defaultCallback = (dialogElement) => {
+        dialogElement.close();
+        document.body.removeChild(dialogElement);
+    }
+
+    /**
+     * Creates a HTMLDialog Element
+     * @param {Object} 
+     * @param {String} title A title for the Dialog
+     * @param {String} Message The message displayed
+     * @param {String?} Type The type of Dialog to be rendered (e.g: Warn, Confirm)
+     * @param {String?} Style the CSS class to be applied to the Dialog
+     * @param {String?} yesmessage The text to be displayed on "confirm" buttons
+     * @param {String?} nomessage The text to be displayed on "cancel" buttons
+     * @param {CallableFunction?} yesCallback The Callback for "confirm" events
+     * @param {CallableFunction?} noCallback The Callback for "cancel" events
+     * @returns 
+     */
     constructor({
         title,
         message,
@@ -12,7 +30,8 @@ export default class Dialog {
         nomessage = 'No',
         yesCallback = null,
         noCallback = null
-    }) {
+        }) 
+        {
         this.title = title;
         this.message = message;
         this.type = type;
@@ -22,10 +41,11 @@ export default class Dialog {
         this.nomessage = nomessage;
         this.yesCallback = yesCallback;
         this.noCallback = noCallback;
+        this.value = 'no';
 
-        if (this.yesCallback === null){this.yesCallback = `"this.parentElement.parentElement.close()"`}
-        if (this.noCallback === null){this.noCallback = `"this.parentElement.parentElement.close()"`}
-
+        if (this.yesCallback === null) {this.yesCallback = Dialog.defaultCallback}
+        if (this.noCallback === null) {this.noCallback = Dialog.defaultCallback}
+        
         return this.createElement();
     }
 
@@ -42,16 +62,29 @@ export default class Dialog {
 
         switch (this.type) {
             case 'warn':
-                dialog.querySelector('.button-wrapper').innerHTML = `<button type="button" onclick="this.parentElement.parentElement.close()">${this.okmessage}</button>`
+                dialog.querySelector('.button-wrapper').innerHTML = `<button value="no" type="button" onclick="this.parentElement.parentElement.close()">${this.okmessage}</button>`
+                dialog.querySelector('button').addEventListener('click', () => this.noCallback(dialog))
                 break;
             case 'yesno':
                 dialog.querySelector('.button-wrapper').innerHTML =
                     `
-                <button onclick=${this.noCallback} class="cancel-button" type="button">${this.nomessage}</button>
-                <button onclick=${this.yesCallback}>${this.yesmessage}</button>
+                <button value="no" class="cancel-button" type="button">${this.nomessage}</button>
+                <button value="yes">${this.yesmessage}</button>
                 `
+                dialog.querySelector('button:nth-of-type(1)').addEventListener('click', () => this.noCallback(dialog, ...arguments))
+                dialog.querySelector('button:nth-of-type(2)').addEventListener('click', () => this.yesCallback(dialog, ...arguments))
                 break;
+            case 'createProfile':
+                dialog.querySelector('.button-wrapper').innerHTML =
+                `
+                <input class="flex-grow-1" type="text" placeholder="Your trainer name"/>
+                <button class="cancel-button">Go Back</button>
+                <button>Create Trainer</button>
+                `
+                dialog.querySelector('button:nth-of-type(1)').addEventListener('click', () => this.noCallback(dialog, ...arguments))
+                dialog.querySelector('button:nth-of-type(2)').addEventListener('click', () => this.yesCallback(dialog, ...arguments))
 
+                break;
         }
 
         return dialog;

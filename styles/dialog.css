@@ -42,4 +42,10 @@ dialog{
         border: 1px solid white;
         border-radius: .2rem;
     }
+    & input[type="text"]{
+        width: 100%;
+        text-align: center;
+        font-size: 1.4rem;
+        flex-grow: 1;
+    }
 }

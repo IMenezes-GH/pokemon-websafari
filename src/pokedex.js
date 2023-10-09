@@ -7,6 +7,7 @@ const previousButton = document.getElementById('previous')
 
 let searchIndex = 1;
 
+// LISTENERS ================================
 nextButton.onclick = () => {
     searchIndex += 25;
     render(searchIndex);
@@ -18,6 +19,10 @@ previousButton.onclick = () => {
     render(searchIndex);
 }
 
+/**
+ * Renders the pokédex page
+ * @param {Number} index A Number from which the pokémon data renders from. searchIndex = 1 + 25n
+ */
 async function render(index){
     previousButton.disabled = searchIndex === 1 || searchIndex === 40; //Disable button if it's the first page
     try {

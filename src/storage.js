@@ -1,4 +1,11 @@
+import {EmptyStorageError, NoStorageError} from './error';
+
 export default class Storage{
+
+
+    constructor(){
+        this.profile = Storage.loadLocalStorage('profiles')[1];
+    }
 
     /**
      * Loads and parses localStorage data
@@ -10,11 +17,17 @@ export default class Storage{
         const storageData = JSON.parse(localStorage.getItem(key));
     
         if (storageData === null) throw new NoStorageError(key);
-        if (storageData.size === undefined || storageData.size === 0) throw new EmptyStorageError();
     
         return storageData;
     }
     
+    static updateLocalStorage = (key, data) => {
+
+        const storageData = JSON.stringify(data);
+        localStorage.setItem(key, storageData);
+
+    }
+
     /**
      * 
      * @param {String} key A localStorage key to be set
@@ -38,16 +51,18 @@ export default class Storage{
         switch (key) {
             case 'profiles':
                 return {
-                    size: 1,
-                        1: {
+                    'profiles': [],
+                    'size' : 0
+                }
+            case 'profile':
+                return {
                             name: null,
                             caught_pokemon: 0,
                             seen_pokemon: 0,
                             pokemon: [],
                             team: [],
                             unlocked_areas: ['safari']
-                        }
-                };
+                        };
             default:
                 throw new Error('Invalid storage key');
     

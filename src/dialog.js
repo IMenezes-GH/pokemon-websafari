@@ -1,3 +1,5 @@
+import Storage from "./storage";
+
 export default class Dialog {
 
     // Dialog types: confirm, warn, CreateProfile
@@ -73,6 +75,32 @@ export default class Dialog {
                 `
                 dialog.querySelector('button:nth-of-type(1)').addEventListener('click', () => this.noCallback(dialog, ...arguments))
                 dialog.querySelector('button:nth-of-type(2)').addEventListener('click', () => this.yesCallback(dialog, ...arguments))
+                break;
+            case 'selectProfile':
+                const profilesStorage = Storage.loadLocalStorage('profiles');
+                const profiles = profilesStorage.profiles
+
+                dialog.innerHTML =
+                `
+                <h2>${this.title}</h2>
+                <hr>
+                <p>${this.message}</p>
+                <select>
+                </select>
+                <div class="button-wrapper">
+                <button value="no" class="cancel-button" type="button">${this.nomessage}</button>
+                <button value="yes">${this.yesmessage}</button>
+                </div>
+                `
+                for (let i = 0; i < profilesStorage.size; i++){
+                    const option = document.createElement('option')
+                    option.value = profiles[i];
+                    option.innerText = profiles[i]
+                    dialog.querySelector('select').appendChild(option)
+                }
+                dialog.querySelector('button:nth-of-type(1)').addEventListener('click', () => this.noCallback(dialog, ...arguments))
+                dialog.querySelector('button:nth-of-type(2)').addEventListener('click', () => this.yesCallback(dialog, ...arguments))
+
                 break;
             case 'createProfile':
                 dialog.innerHTML =

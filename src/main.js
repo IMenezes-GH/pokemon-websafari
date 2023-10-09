@@ -1,5 +1,5 @@
 import Storage from "./storage";
-import { getProfile, createNewProfileEvent, selectProfileEvent } from "./util";
+import { getProfile, createFirstProfileEvent, selectProfileEvent, createNewProfileEvent } from "./util";
 
 const buttonPlay = document.getElementById('button-play');
 
@@ -12,12 +12,9 @@ buttonPlay.addEventListener('click', (ev) => {
 
         const profilesStorage = Storage.loadLocalStorage('profiles');
 
-        if (profilesStorage.size === 0) createNewProfileEvent();
-        if (profilesStorage.size === 1) {
-            const profile = getProfile();
-            console.log(profile);
-        }
+        if (profilesStorage.size === 0) createFirstProfileEvent();
+        if (profilesStorage.size === 1) createNewProfileEvent();
+        if (profilesStorage.size > 1) selectProfileEvent();
 
-        // if (profilesStorage.size > 1) selectProfileEvent();
     }
 })

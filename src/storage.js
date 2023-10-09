@@ -51,6 +51,7 @@ export default class Storage{
         switch (key) {
             case 'profiles':
                 return {
+                    'profile': 0,
                     'profiles': [],
                     'size' : 0
                 }

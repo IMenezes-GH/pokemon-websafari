@@ -10,12 +10,14 @@
   <link rel="stylesheet" href="./styles/main.css">
   <link rel="stylesheet" href="./styles/footer.css">
   <link rel="stylesheet" href="./styles/animation.css">
+  <link rel="stylesheet" href="./styles/dialog.css">
   <script type="module" src="./src/main.js"></script>
+  <script type="module" src="./src/hero.js"></script>
 </head>
 
 <body>
   <header id="header">
-    <h1><a href="./index.html">PokéSafari</a> <button class="mobile-button">☰</button></h1>
+    <h1><a href="./index.html">PokéSafari</a> <span><span id="player"></span><button class="mobile-button">☰</button></span></h1>
     <hr>
   </header>
   <nav>
@@ -38,7 +40,7 @@
             <p class="animate slide-right pop-in" style="--delay: .5s">Explore the PokéSafari and complete your online pokedéx!</p>
           </hgroup>
           <hr>
-          <button class="animate pop-in animate--delay txt-weight-800" style="--delay: 2s;--start-opacity: 0">Play now!</button>
+          <button id="button-play" class="animate pop-in animate--delay txt-weight-800" style="--delay: 2s;--start-opacity: 0">Play now!</button>
           <p></p>
         </article>
       </div>
@@ -58,5 +60,4 @@
     </div>
   </footer>
 </body>
-
 </html>

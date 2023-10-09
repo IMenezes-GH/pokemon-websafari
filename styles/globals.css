@@ -69,6 +69,18 @@ button:not(.mobile-button) {
     }
 }
 
+.cancel-button{
+    background-color: transparent !important;
+    color: var(--txt-color-primary) !important;
+    border: 1px solid var(--txt-color-primary) !important;
+
+    &:hover{
+        background-color: var(--color-black) !important;
+        color: white !important;
+        border-color: white !important;
+    }
+}
+
 .mobile-button{
     cursor: pointer;
     
@@ -81,6 +93,14 @@ button:not(.mobile-button) {
 
     font-size: 2rem;
     font-weight: 500;
+}
+
+select {
+    background-color: rgb(255, 255, 255);
+    min-height: 3rem;
+    font-size: 1.5rem;
+    height: 1.5rem;
+    text-align: center;
 }
 
 table{
@@ -119,6 +139,11 @@ table{
         
         font-weight: 600;
     }
+}
+
+.bg-color-white{
+    background-color: white !important;
+    color: var(--color-black) !important;
 }
 
 .txt-weight-200{
@@ -160,6 +185,10 @@ table{
                 calc(1px * var(--txt-shadow-outline)) calc(2px * var(--txt-shadow-outline)) calc(6px * var(--txt-shadow-outline)) var(--color-accent),
                 calc(1px * var(--txt-shadow-outline)) calc(-1px * var(--txt-shadow-outline)) 0px var(--color-accent),
                 calc(-1px * var(--txt-shadow-outline)) calc(-1px * var(--txt-shadow-outline)) 0px var(--color-accent);
+}
+
+.flex-grow-1{
+    flex-grow: 1 !important;
 }
 
 

@@ -1,11 +1,12 @@
 import Pokemon from "./pokemon.js";
-import { fetchPokemonData } from "./util.js";
+import { fetchPokemonData, getProfile } from "./util.js";
 
 const pokedex = document.getElementById('pokedex-container');
 const nextButton = document.getElementById('next');
 const previousButton = document.getElementById('previous')
 
 let searchIndex = 1;
+const profile = getProfile();
 
 // LISTENERS ================================
 nextButton.onclick = () => {
@@ -30,6 +31,10 @@ async function render(index){
         for (let i = index; i < index + 25; i++){
             const data = await fetchPokemonData(i);
             const pokemon = new Pokemon(data);
+            if (profile !== undefined && profile.pokemon.includes(pokemon.name)){
+                pokemon.seen = true;
+                pokemon.caught = true;
+            }
             pokedex.appendChild(pokemon.createElement())
         }
 

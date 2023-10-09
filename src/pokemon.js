@@ -11,6 +11,8 @@ export default class Pokemon{
         this.types = apidata.types;
         this.sprite = apidata.sprites.front_default;
         this.image = apidata.sprites.other['official-artwork'].front_default;
+        this.seen = false;
+        this.caught = false;
     }
 
     createElement(){
@@ -20,11 +22,12 @@ export default class Pokemon{
         `
         <p>#${this.id}</p>
         <div class="img-wrapper">
-        <img src=${this.sprite} alt=${this.name}>
+        <img ${this.caught ? 'class="show"' : ''} src=${this.sprite} alt=${this.name}>
         </div>
-        <h3>???</h3>
+        <h3>${this.seen ? this.name : '???'}</h3>
         <p>${this.types[0].type.name}${this.types[1] !== undefined ? '/' + this.types[1].type.name : ''}</p>
         `
+
         return article;
 
     }

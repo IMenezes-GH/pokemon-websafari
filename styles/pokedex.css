@@ -43,7 +43,11 @@
         border-radius: 100%;
 
         & img {
-            filter: brightness(0)
+            filter: brightness(0);
+
+            &.show{
+                filter: brightness(1);
+            }
         }
     }
 

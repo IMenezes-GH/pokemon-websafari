@@ -81,9 +81,9 @@ export default class Dialog {
                 <hr>
                 <p>${this.message}</p>
                 <select>
-                <option value="bulbasaur">Bulbasaur</option>
-                <option value="charmander">Charmander</option>
-                <option value="squirt">Squirtle</option>
+                <option value="Bulbasaur">Bulbasaur</option>
+                <option value="Charmander">Charmander</option>
+                <option value="Squirtle">Squirtle</option>
                 </select>
                 <div class="button-wrapper">
                 <input required class="flex-grow-1" type="text" placeholder="Your trainer name"/>

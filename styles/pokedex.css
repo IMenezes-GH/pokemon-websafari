@@ -14,6 +14,7 @@
 }
 
 .pokedex-slot{
+    cursor: pointer;
     border: 3px solid rgb(155, 42, 42);
     border-radius: 1.14rem;
     padding: 1rem;

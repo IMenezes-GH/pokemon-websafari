@@ -100,5 +100,12 @@ main {
     #section-hero button{
         width: 30% !important;
         align-self: flex-end !important;
+        transition: 1s ease;
+        &:hover{
+            box-shadow: 4px 4px 4px var(--color-accent),
+            12px 4px 24px var(--color-accent),
+            4px 4px 12px var(--color-accent);
+            transform: translateY(-2px);
+        }
     }
 }

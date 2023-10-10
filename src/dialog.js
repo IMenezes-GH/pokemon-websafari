@@ -123,7 +123,53 @@ export default class Dialog {
                 dialog.querySelector('button:nth-of-type(2)').addEventListener('click', () => this.yesCallback(dialog, ...arguments))
 
                 break;
+                
         }
+
+        return dialog;
+    }
+}
+
+export class DialogPokemon{
+    
+    constructor(data){
+        this.pokemon = data;
+    }
+
+    createElement(){
+        const dialog = document.createElement('dialog');
+        const [type1, type2] = [...this.pokemon.types];
+        const [hp, atk, def, spa, spd, spe] = [...this.pokemon.stats];
+        const [ab1, ab2, ha] = [...this.pokemon.abilities];
+        
+        dialog.classList.add('pokemon-dialog')
+        dialog.innerHTML =
+        `
+        <article>
+        <header>
+        <h1>${this.pokemon.name}</h1>
+        <button class="close-button">close</button>
+        </header>
+        <section>
+            <div>
+            <h2>${type1.type.name}${type2 ? '/' + type2.type.name : ''}</h2>
+            <h3 class="txt-weight-200">${ab1.ability.name}${ab2 ? '/' + ab2.ability.name : ''}</h3>
+            <ul>
+                <li>HP: ${hp.base_stat}</li>
+                <li>ATK: ${atk.base_stat}</li>
+                <li>DEF: ${def.base_stat}</li>
+                <li>SPA: ${spa.base_stat}</li>
+                <li>SPD: ${spd.base_stat}</li>
+                <li>SPE: ${spe.base_stat}</li>
+            </ul>
+            </div>
+            <div>
+            <img src=${this.pokemon.sprites.front_default}>
+            </div>        
+        </section>
+        </article>
+        `
+        dialog.querySelector('.close-button').addEventListener('click', () => dialog.close())
 
         return dialog;
     }

@@ -54,3 +54,95 @@ dialog{
         flex-grow: 1;
     }
 }
+
+.pokemon-dialog{
+
+    min-width: 400px;
+    padding: 0;
+    width: 70vw;
+    min-height: 50vh;
+    
+    border-color: var(--color-black);
+    border-radius: 1.5rem;
+    background-color: var(--color-black);
+    color: white;
+    
+    & article{
+        padding: 0;
+        margin: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+        & > section{
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+
+            & > div:nth-of-type(1){
+                & h2,h3{
+                    text-align: left;
+                }
+                margin-left: 1.5rem;
+                align-self: center;
+            }
+            
+            & > div:nth-of-type(2){
+                background-image: url('../assets/Safari_RTDX.png');
+                background-color: white;
+                background-position: -100px -230px;
+                border-bottom-left-radius: .5rem;
+                justify-content: center;
+                align-self: flex-end;
+            }
+        }
+    }
+    
+    & img {
+        image-rendering: pixelated;
+        width: 12rem;
+    }
+    
+    & header{
+        
+        & h1 {
+            color: black;
+            padding: 0;
+            margin: 0;
+            margin-left: 1.5rem;
+            flex-grow: 0;
+            width: fit-content;
+        }
+
+        
+        width: 100%;
+        padding: 0;
+        margin: 0;
+
+        background-color: white;
+        box-shadow: none;
+
+
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        align-items: center;
+
+        & button.close-button{
+            height: fit-content;
+            width: fit-content;
+            background-color: transparent;
+            box-shadow: none;
+            padding: 0;
+            border: none;
+
+            &:hover, &:active   {
+                background-color: transparent;
+                border: none;   
+                color: white;
+            }
+        }
+
+    }
+}

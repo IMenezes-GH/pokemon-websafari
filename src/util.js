@@ -43,6 +43,7 @@ export const selectProfileEvent = () => {
 
         currentDialog.close();
         document.body.removeChild(currentDialog);
+        location.reload();
     }
 
     const dialog = new Dialog({
@@ -122,6 +123,7 @@ function createTrainerEvent(previousDialog) {
 
         currentDialog.close();
         document.body.removeChild(currentDialog);
+        location.reload();
     }
 
     const createTrainerDialog = new Dialog({

@@ -20,6 +20,9 @@ menuButton.addEventListener('click', (ev) => {
     asideMenu.onmouseleave = (ev) => {
         asideMenu.classList.add('toggle-hidden')
     }
+    window.onscroll = () => {
+        asideMenu.classList.add('toggle-hidden');
+    }
 })
 
 console.log(player);

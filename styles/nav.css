@@ -77,7 +77,7 @@ header {
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);
 }
 
-nav {
+#navbar {
 
     box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.6);
     width: 100%;
@@ -106,6 +106,7 @@ nav {
     z-index: 10;
 }
 
+
 #player{
     font-size: 1rem;
     font-weight: 400;
@@ -125,7 +126,7 @@ nav {
         }
     }
 
-    nav {
+    #navbar {
         display: flex;
     }
 }

@@ -141,8 +141,6 @@ export class DialogPokemon{
         const [type1, type2] = [...this.pokemon.types];
         const [hp, atk, def, spa, spd, spe] = [...this.pokemon.stats];
         const [ab1, ab2, ha] = [...this.pokemon.abilities];
-        
-        console.log(this.pokemon);
 
         dialog.classList.add('pokemon-dialog')
         dialog.innerHTML =

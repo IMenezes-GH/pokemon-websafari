@@ -9,7 +9,8 @@ export default defineConfig({
         main: resolve(__dirname, 'index.html'),
         pokedex: resolve(__dirname, 'safari/pokedex.html'),
         about: resolve(__dirname, 'safari/about.html'),
-        team: resolve(__dirname, 'safari/team.html')
+        team: resolve(__dirname, 'safari/team.html'),
+        explore : resolve(__dirname, 'safari/explore.html')
       }
     }
   }

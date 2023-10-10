@@ -17,4 +17,14 @@ export default class Player {
     get name(){
         return this.data.name;
     }
+
+    givePokemon(pokeId){
+
+        this.data.pokemon.push(pokeId);
+        this.data.seen_pokemon.push(pokeId);
+        this.data.caught_pokemon.push(pokeId);
+
+        Storage.updateLocalStorage(this.data.name, this.data);
+    }
+
 }

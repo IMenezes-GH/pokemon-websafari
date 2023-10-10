@@ -210,6 +210,14 @@ table{
     border-color: var(--color-accent);
 }
 
+.filter-brightness-0{
+    filter: brightness(0);
+}
+
+.filter-brightness-1{
+    filter: brightness(1);
+}
+
 .WIP{
     min-width: 100%;
     background-color: var(--color-black);

@@ -208,3 +208,16 @@ table{
 .border-color-accent{
     border-color: var(--color-accent);
 }
+
+.WIP{
+    min-width: 100%;
+    background-color: var(--color-black);
+    padding-top: .2rem;
+    
+    text-align: center;
+    font-weight: 600;
+    
+    position: fixed;
+    bottom: 0;
+    z-index: 100;
+}

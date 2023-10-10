@@ -5,6 +5,10 @@ footer {
         font-size: 1.25rem;
         text-align: center;
         text-decoration: underline;
+
+        & a, a:visited, a:hover{
+            color: white !important;
+        }
     }
 
     & .footer-social{

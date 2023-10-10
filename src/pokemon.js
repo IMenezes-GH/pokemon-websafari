@@ -1,3 +1,5 @@
+import unknownUrl from '../assets/unknown.png';
+
 import Dialog, {
     DialogPokemon
 } from "./dialog";
@@ -16,11 +18,11 @@ export default class Pokemon {
             ability: {name: '???'}
         }],
         sprites: {
-            front_default: '../assets/unknown.png',
+            front_default: unknownUrl,
             versions: {
                 "generation-v": {
                     'black-white': {
-                        animated: {front_default: '../assets/unknown.png'},
+                        animated: {front_default: unknownUrl},
                     }
                 }
             }

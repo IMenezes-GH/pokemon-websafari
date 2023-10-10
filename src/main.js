@@ -1,7 +1,7 @@
 import Player from "./player";
 import { createFirstProfileEvent, getProfile, selectProfileEvent } from "./util";
 
-const player = new Player();
+export const player = new Player();
 const playerText = document.getElementById('player');
 const menuButton = document.getElementById('menu-button');
 const asideMenu = document.getElementById('aside-menu');

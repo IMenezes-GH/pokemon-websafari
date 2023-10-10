@@ -57,9 +57,9 @@ dialog{
 
 .pokemon-dialog{
 
-    min-width: fit-content;
-    min-height: 10vh;
-    max-height: fit-content;
+    /* min-width: fit-content; */
+    width: 100vw;
+    max-width: 100vw;
 
     padding: 0;
     
@@ -68,85 +68,131 @@ dialog{
 
     background-color: var(--color-black);
     color: white;
+
+    overflow-x: hidden;
     
     & article{
+        height: 100%;
         padding: 0;
         margin: 0;
         display: flex;
         flex-direction: column;
         justify-content: center;
-        align-items: center;
+        
+        & header{
 
-        & > section{
             width: 100%;
+            padding: 0;
+            margin: 0;
+            
+            background-color: var(--color-accent);
+            box-shadow: none;
+            border-bottom: 3px solid black;
+    
+    
+            display: flex;
+            justify-content: space-between;
+    
+            flex-direction: row;
+            align-items: center;
+            
+            & h1 {
+                color: black;
+                padding: 0;
+                margin: 0;
+                margin-left: 1.5rem;
+                flex-grow: 0;
+                width: fit-content;
+                text-transform: capitalize;
+            }
+            
+    
+            & button.close-button{
+                height: fit-content;
+                width: fit-content;
+                background-color: transparent;
+                box-shadow: none;
+                padding: 0;
+                border: none;
+    
+                &:hover, &:active   {
+                    background-color: transparent;
+                    border: none;   
+                    color: white;
+                }
+            }
+    
+        }
+
+        & > section:first-of-type{
             display: flex;
             justify-content: space-between;
 
+            
+            /* DIV FOR POKÉMON DATA */
             & > div:nth-of-type(1){
-                & h2,h3{
-                    text-align: left;
+
+                /* margin-left: 1.5rem; */
+                min-width: 50%;
+                padding-bottom: 1rem;
+
+                & > h2{
+                    margin-top: 1rem;
+                    /* text-align: left; */
+                    text-transform: capitalize;
+                    cursor: pointer;
                 }
-                margin-left: 1.5rem;
-                align-self: center;
+
+                & > ul {
+                    list-style-type: '- ';
+                    margin-top: 1rem;
+                    margin-left: 1rem;
+                }
+
             }
             
+            /* DIV for image */
             & > div:nth-of-type(2){
-                background-image: url('../assets/Safari_RTDX.png');
-                background-color: white;
-                background-position: -100px -230px;
+                background-image: url('../assets/Wild_Plains_RTDX.png');
+                background-position: -380px 390px;
+
+                min-width: 60%;
+                max-width: 24rem;
+
                 border-bottom-left-radius: .5rem;
                 justify-content: center;
-                align-self: flex-end;
-            }
-        }
-    }
-    
-    & img {
-        image-rendering: pixelated;
-        width: 12rem;
-    }
-    
-    & header{
-        
-        & h1 {
-            color: black;
-            padding: 0;
-            margin: 0;
-            margin-left: 1.5rem;
-            flex-grow: 0;
-            width: fit-content;
-        }
-        
-        
-        width: 100%;
-        padding: 0;
-        margin: 0;
-        
-        background-color: white;
-        box-shadow: none;
-        border-bottom: 3px solid black;
+                display: flex;
 
+                & > img {
+                    align-self: center;
+                    min-height: 40%;
+                    max-height: 10rem;
 
-        display: flex;
-        justify-content: space-between;
-
-        flex-direction: row;
-        align-items: center;
-
-        & button.close-button{
-            height: fit-content;
-            width: fit-content;
-            background-color: transparent;
-            box-shadow: none;
-            padding: 0;
-            border: none;
-
-            &:hover, &:active   {
-                background-color: transparent;
-                border: none;   
-                color: white;
+                    align-self: flex-end;
+                    margin-bottom: 1rem;
+                    image-rendering: pixelated;
+                }
             }
         }
 
+        & > section:nth-of-type(2){
+            border-top: 8px solid var(--color-accent);
+            width: 100%;
+            height: 10vh;
+            background-color: white;
+            flex-grow: 1;
+
+            display: flex;
+            flex-direction: column;
+        }
     }
+}
+
+@media screen and (min-width: 612px){
+
+    .pokemon-dialog{
+
+        max-width: 60vw;
+    }
+
 }

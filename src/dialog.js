@@ -169,6 +169,8 @@ export class DialogPokemon{
             <img src=${this.pokemon.sprites.versions['generation-v']['black-white'].animated.front_default || this.pokemon.sprites.front_default}>
             </div>        
         </section>
+        <section>
+        </section>
         </article>
         `
         dialog.querySelector('.close-button').addEventListener('click', () => dialog.close())

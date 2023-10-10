@@ -7,7 +7,7 @@ footer {
         text-decoration: underline;
 
         & a, a:visited, a:hover{
-            color: white !important;
+            color: var(--txt-color-primary);
         }
     }
 
@@ -45,10 +45,11 @@ footer {
             font-weight: 300;
             margin-bottom: 1rem;
 
-            & a, a:active, a:visited {
-                color: var(--color-black);
-                font-weight: 400;
-            }
+        }
+        
+        & a, a:active, a:visited {
+            color: var(--color-black);
+            font-weight: 400;
         }
 
         text-align: center;

@@ -57,13 +57,15 @@ dialog{
 
 .pokemon-dialog{
 
-    min-width: 400px;
+    min-width: fit-content;
+    min-height: 10vh;
+    max-height: fit-content;
+
     padding: 0;
-    width: 70vw;
-    min-height: 50vh;
     
-    border-color: var(--color-black);
-    border-radius: 1.5rem;
+    border-radius: 0.25rem;
+    border-color: transparent;
+
     background-color: var(--color-black);
     color: white;
     
@@ -114,18 +116,20 @@ dialog{
             flex-grow: 0;
             width: fit-content;
         }
-
+        
         
         width: 100%;
         padding: 0;
         margin: 0;
-
+        
         background-color: white;
         box-shadow: none;
+        border-bottom: 3px solid black;
 
 
         display: flex;
         justify-content: space-between;
+
         flex-direction: row;
         align-items: center;
 

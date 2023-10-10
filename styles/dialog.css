@@ -153,7 +153,7 @@ dialog{
             
             /* DIV for image */
             & > div:nth-of-type(2){
-                background-image: url('../assets/Wild_Plains_RTDX.png');
+                /* background-image: url('../assets/Wild_Plains_RTDX.png'); */
                 background-position: -380px 390px;
 
                 min-width: 60%;
@@ -165,11 +165,12 @@ dialog{
 
                 & > img {
                     align-self: center;
-                    min-height: 40%;
-                    max-height: 10rem;
+                    min-height: 100%;
+                    /* max-height: 10rem; */
 
                     align-self: flex-end;
-                    margin-bottom: 1rem;
+                    /* margin-bottom: 1rem; */
+                    z-index: 100;
                     image-rendering: pixelated;
                 }
             }

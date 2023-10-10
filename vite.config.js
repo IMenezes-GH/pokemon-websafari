@@ -4,7 +4,7 @@ import { defineConfig } from 'vite'
 // const { defineConfig } = require("vite");
 
 export default defineConfig({
-  base: 'pokemon-websafari',
+  base: '/pokemon-websafari/',
   build: {
     rollupOptions: {
       input: {

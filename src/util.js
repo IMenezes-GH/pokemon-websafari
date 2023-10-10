@@ -100,10 +100,12 @@ function createTrainerEvent(previousDialog) {
         previousDialog.showModal();
     }
 
-    const chooseName = (currentDialog) => {
+    const chooseName = async (currentDialog) => {
         const profilesData = Storage.loadLocalStorage('profiles');
         const trainerName = currentDialog.querySelector("input").value;
         const starterName = currentDialog.querySelector("select").value;
+
+        const starterPokemon = await fetchPokemonData(starterName.toLowerCase());
 
         Storage.createLocalStorage(trainerName, Storage.createStorageHelper('profile'));
 
@@ -111,8 +113,8 @@ function createTrainerEvent(previousDialog) {
         profileData.name = trainerName;
         profileData.pokemon.push(starterName);
         profileData.team.push(starterName);
-        profileData.seen_pokemon += 1;
-        profileData.caught_pokemon += 1;
+        profileData.seen_pokemon = [starterPokemon.id];
+        profileData.caught_pokemon = [starterPokemon.id];
 
         profilesData.profile = trainerName;
         profilesData.profiles.push(trainerName);

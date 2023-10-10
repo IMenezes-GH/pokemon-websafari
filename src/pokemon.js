@@ -2,23 +2,61 @@ import Dialog, {
     DialogPokemon
 } from "./dialog";
 
-export default class Pokemon {
 
+export default class Pokemon {
+    
+    static unknown = {
+        name: 'Unknown',
+        types: [{
+            type: {
+                name: '???'
+            }
+        }],
+        abilities: [{
+            ability: {name: '???'}
+        }],
+        sprites: {
+            front_default: '../assets/unknown.png',
+            versions: {
+                "generation-v": {
+                    'black-white': {
+                        animated: {front_default: '../assets/unknown.png'},
+                    }
+                }
+            }
+        },
+        stats: [{
+            base_stat: '?'
+        }, {
+            base_stat: '?'
+        }, {
+            base_stat: '?'
+        }, {
+            base_stat: '?'
+        }, {
+            base_stat: '?'
+        }, {
+            base_stat: '?'
+        }]
+    }
     /**
      * 
      * @param {Object} apidata 
      */
-    constructor(apidata) {
+    constructor(apidata = Pokemon.unknown) {
 
         this.data = apidata;
-        this.id = apidata.id;
-        this.name = apidata.name.charAt(0).toUpperCase() + apidata.name.substring(1);
-        this.types = apidata.types;
-        this.sprite = apidata.sprites.front_default;
-        this.image = apidata.sprites.other['official-artwork'].front_default;
+
         this.seen = false;
         this.caught = false;
         this.dialog = new DialogPokemon(this.data);
+    }
+
+    setFilter() {
+        if (this.seen && this.caught) return 'filter-brightness-1';
+        if (this.seen && !this.caught) return 'filter-brightness-0';
+        return 'filter-brightness-1';
+
     }
 
     createElement() {
@@ -26,12 +64,12 @@ export default class Pokemon {
         article.classList.add('pokedex-slot')
         article.innerHTML =
             `
-        <p>#${this.id}</p>
+        <p>#${this.data.id}</p>
         <div class="img-wrapper">
-        <img ${this.caught ? 'class="show"' : ''} src=${this.sprite} alt=${this.name}>
+        <img class="${this.setFilter()} pokedex-pokemon-img" src=${this.data.sprites.front_default} alt=${this.data.name}>
         </div>
-        <h3>${this.seen ? this.name : '???'}</h3>
-        <p>${this.types[0].type.name}${this.types[1] !== undefined ? '/' + this.types[1].type.name : ''}</p>
+        <h3>${this.seen ? this.data.name : '???'}</h3>
+        <p>${this.data.types[0].type.name}${this.data.types[1] !== undefined ? '/' + this.data.types[1].type.name : ''}</p>
         `
         article.onclick = () => {
             const dialog = this.dialog.createElement();

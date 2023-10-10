@@ -142,6 +142,8 @@ export class DialogPokemon{
         const [hp, atk, def, spa, spd, spe] = [...this.pokemon.stats];
         const [ab1, ab2, ha] = [...this.pokemon.abilities];
         
+        console.log(this.pokemon);
+
         dialog.classList.add('pokemon-dialog')
         dialog.innerHTML =
         `
@@ -164,7 +166,7 @@ export class DialogPokemon{
             </ul>
             </div>
             <div>
-            <img src=${this.pokemon.sprites.front_default}>
+            <img src=${this.pokemon.sprites.versions['generation-v']['black-white'].animated.front_default || this.pokemon.sprites.front_default}>
             </div>        
         </section>
         </article>

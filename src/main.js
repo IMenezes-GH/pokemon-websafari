@@ -24,3 +24,4 @@ menuButton.addEventListener('click', (ev) => {
         asideMenu.classList.add('toggle-hidden');
     }
 })
+

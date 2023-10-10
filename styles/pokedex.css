@@ -24,8 +24,10 @@
     border-radius: 1.14rem;
     padding: 1rem;
 
-    min-width: 20rem;
-    max-width: 20rem;
+    min-width: 15rem;
+    min-height: 15rem;
+    max-width: 15rem;
+    max-height: 15rem;
     place-self: center;
 
     background: linear-gradient(var(--color-accent) 40%,white 0);
@@ -35,7 +37,8 @@
 
     display: flex;
     flex-direction: column;
-
+    flex-wrap: nowrap;
+    
     & :first-child{
         color: white;
     }
@@ -53,7 +56,6 @@
 
     text-align: center;
     & h1, h2, h3{
-        font-size: 1.5rem;
         font-weight: 500;
     }
 }
@@ -98,7 +100,7 @@
 
         &:disabled{
             cursor: not-allowed;
-            border: .25rem solid gray;
+            border-color: gray;
             background-color: rgb(201, 194, 194) !important;
             color: rgb(104, 101, 101) !important;
         }

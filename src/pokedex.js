@@ -7,28 +7,29 @@ const previousButton = document.getElementById('previous')
 
 let searchIndex = 1;
 const profile = getProfile();
+const NUM_POKEMON = 12
 
 // LISTENERS ================================
 nextButton.onclick = () => {
-    searchIndex += 25;
+    searchIndex += NUM_POKEMON;
     render(searchIndex);
 }
 previousButton.onclick = () => {
     if (searchIndex === 1) return;
     
-    searchIndex -= 25;
+    searchIndex -= NUM_POKEMON;
     render(searchIndex);
 }
 
 /**
  * Renders the pokédex page
- * @param {Number} index A Number from which the pokémon data renders from. searchIndex = 1 + 25n
+ * @param {Number} index A Number from which the pokémon data renders from. searchIndex = 1 + NUM_POKEMONn
  */
 async function render(index){
     previousButton.disabled = searchIndex === 1 || searchIndex === 40; //Disable button if it's the first page
     try {
         pokedex.replaceChildren();
-        for (let i = index; i < index + 25; i++){
+        for (let i = index; i < index + NUM_POKEMON; i++){
             const data = await fetchPokemonData(i);
             const pokemon = new Pokemon(data);
             if (profile !== undefined && profile.pokemon.includes(pokemon.name)){

@@ -15,6 +15,13 @@
 
 }
 
+@media (prefers-color-scheme: dark){
+    :root{
+        --bg-color-primary: rgb(15, 15, 15);
+        --txt-color-primary: rgb(250, 245, 245);
+    }
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -79,6 +86,12 @@ button:not(.mobile-button) {
         color: white !important;
         border-color: white !important;
     }
+}
+
+.close-button{
+    cursor: pointer;
+    color: var(--color-black) !important;
+    margin-right: 1rem;
 }
 
 .mobile-button{

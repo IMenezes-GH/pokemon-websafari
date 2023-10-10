@@ -78,8 +78,8 @@ button:not(.mobile-button) {
 
 .cancel-button{
     background-color: transparent !important;
-    color: var(--txt-color-primary) !important;
-    border: 1px solid var(--txt-color-primary) !important;
+    color: var(--color-black) !important;
+    border: 1px solid var(--color-black) !important;
 
     &:hover{
         background-color: var(--color-black) !important;

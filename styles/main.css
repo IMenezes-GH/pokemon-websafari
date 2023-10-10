@@ -1,3 +1,18 @@
+
+#section-intro{
+    margin-top: 5rem;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    gap: 2.5rem;
+
+    & article {
+        width: 80%;
+    }
+}
+
 #section-hero {
     /* background-color: rgb(233, 228, 228); */
     & hr {

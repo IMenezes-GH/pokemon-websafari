@@ -35,6 +35,7 @@ body {
     color: var(--txt-color-primary);
 
     max-width: 100vw;
+    overflow-x: hidden;
 }
 
 main {

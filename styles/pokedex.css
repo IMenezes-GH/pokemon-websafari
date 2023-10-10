@@ -98,7 +98,7 @@
 
         &:disabled{
             cursor: not-allowed;
-            border: .25rem solid gray;
+            border-color: gray;
             background-color: rgb(201, 194, 194) !important;
             color: rgb(104, 101, 101) !important;
         }

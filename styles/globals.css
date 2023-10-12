@@ -221,6 +221,7 @@ table{
 .WIP{
     min-width: 100%;
     background-color: var(--color-black);
+    color: white;
     padding-top: .2rem;
     
     text-align: center;

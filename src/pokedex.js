@@ -65,9 +65,7 @@ async function render(index){
         for (let i = index; i < index + NUM_POKEMON; i++){
 
             if (profile.seen_pokemon.includes(i)){
-                const pokemon = new Pokemon(await fetchPokemonData(i));
-                pokemon.seen = true;
-                pokemon.caught = profile.caught_pokemon.includes(i);
+                const pokemon = new Pokemon(await fetchPokemonData(i), true, profile.caught_pokemon.includes(i));
 
                 pokedex.appendChild(pokemon.createElement())
             } else {

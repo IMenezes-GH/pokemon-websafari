@@ -87,6 +87,8 @@ main {
     }
 
     & #pokedex-section{
+        background-color: var(--color-black);
+        color: white;
         display: flex;
         flex-direction: column;
         
